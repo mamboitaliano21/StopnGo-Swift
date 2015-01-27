@@ -10,6 +10,9 @@ import UIKit
 
 class ViewController: UIViewController {
 
+
+
+    @IBOutlet var gameOverView: GameOverView!
    
     @IBOutlet var score: UILabel!
     @IBOutlet var MainGameView: UIView!
@@ -44,10 +47,11 @@ class ViewController: UIViewController {
         
             //TODO should be get set ? Nope swift actually calls the getter
             if(lightlogic!.safeToPress){
-     
-                self.button.setImage(UIImage(named:"cookie-1"), forState: .Normal)
+                //Good Guy
+                self.button.setImage(UIImage(named:"goodguy"), forState: .Normal)
             } else {
-                self.button.setImage(UIImage(named: "elmo--2-2"), forState: .Normal)
+                //Bad Guy
+                self.button.setImage(UIImage(named: "badguy"), forState: .Normal)
       
             }
         }
@@ -61,7 +65,6 @@ class ViewController: UIViewController {
         // Init the classes
         super.viewDidLoad()
         initGame()
-        
         // Timer code from rshankar
         
         var timer = NSTimer()
@@ -85,10 +88,13 @@ class ViewController: UIViewController {
             if (lightlogic!.safeToPress){
                 addScore()
             }
+            //Game Over
             else{
                 self.button.setImage(UIImage(named:"default"), forState: .Normal)
                 lightlogic = nil
                 self.button.setTitle("Retry ?",forState: .Normal)
+                //custom view code
+                //self.gameOverView.score = self.gamescore.score
             }
         }
         // restart game

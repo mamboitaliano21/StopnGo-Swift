@@ -1,10 +1,62 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="oGA-RE-q7t">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
     </dependencies>
     <scenes>
+        <!--View Controller-->
+        <scene sceneID="UiE-Tp-mlx">
+            <objects>
+                <viewController id="cAn-xc-tzk" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="c9g-Pb-w4H"/>
+                        <viewControllerLayoutGuide type="bottom" id="lba-mH-Vru"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="JCE-fv-IFU">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uSc-zm-W4R">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Play Game">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="vXZ-lx-hvc" kind="show" identifier="PlayGame" id="6eP-wN-wGI"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerY" secondItem="uSc-zm-W4R" secondAttribute="centerY" id="2St-wh-L1n"/>
+                            <constraint firstItem="uSc-zm-W4R" firstAttribute="centerX" secondItem="JCE-fv-IFU" secondAttribute="centerX" id="JCL-Wy-HDa"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="uSc-zm-W4R"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="2St-wh-L1n"/>
+                                <exclude reference="JCL-Wy-HDa"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="uSc-zm-W4R"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="2St-wh-L1n"/>
+                                <include reference="JCL-Wy-HDa"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <navigationItem key="navigationItem" id="gLL-ct-cmI"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Pac-CT-2Xg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-216" y="-25"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
@@ -13,11 +65,11 @@
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS" customClass="GameViewController">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score: 0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cPE-Hf-pg4">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Score: 0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cPE-Hf-pg4">
                                 <rect key="frame" x="277" y="559" width="97" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="28" id="KS5-Q2-Xcs"/>
@@ -45,9 +97,9 @@
                                     <rect key="frame" x="177" y="751" width="97" height="21"/>
                                 </variation>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vN3-B4-PKA">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vN3-B4-PKA">
                                 <rect key="frame" x="277" y="279" width="46" height="30"/>
-                                <state key="normal">
+                                <state key="normal" image="goodguy">
                                     <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -58,7 +110,7 @@
                                     <rect key="frame" x="277" y="385" width="46" height="30"/>
                                 </variation>
                                 <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="179" y="279" width="43" height="43"/>
+                                    <rect key="frame" x="-4" y="211" width="409" height="177"/>
                                 </variation>
                                 <variation key="heightClass=compact-widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="177" y="185" width="46" height="30"/>
@@ -80,18 +132,18 @@
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="tt2-kf-aE1"/>
                                 <exclude reference="p3D-zd-qjf"/>
                                 <exclude reference="B80-ob-Zg6"/>
                                 <exclude reference="dte-9l-Ex5"/>
-                                <exclude reference="tt2-kf-aE1"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="constraints">
+                                <include reference="tt2-kf-aE1"/>
                                 <include reference="p3D-zd-qjf"/>
                                 <include reference="B80-ob-Zg6"/>
                                 <include reference="dte-9l-Ex5"/>
-                                <include reference="tt2-kf-aE1"/>
                             </mask>
                         </variation>
                     </view>
@@ -103,7 +155,31 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-621" y="-51"/>
+            <point key="canvasLocation" x="733.5" y="-30"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Sm6-Pz-jky">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="oGA-RE-q7t" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="cIA-ds-kDG">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="Bj0-aH-vQM">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
+                    <connections>
+                        <segue destination="cAn-xc-tzk" kind="relationship" relationship="rootViewController" id="v3E-X6-JLz"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qF5-LE-Gdr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-931.5" y="-30"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="goodguy" width="177" height="177"/>
+    </resources>
 </document>
